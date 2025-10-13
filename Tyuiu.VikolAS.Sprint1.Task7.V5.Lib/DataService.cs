@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +11,11 @@ namespace Tyuiu.VikolAS.Sprint1.Task7.V5.Lib
     {
         public double Calculate(double x)
         {
-            double denominator = Math.Log(1 + x * x);
-            if (denominator == 0)
-                throw new DivideByZeroException("Деление на ноль невозможно.");
-
             double numerator = Math.Log(Math.Abs(Math.Cos(x)));
-            return numerator / denominator;
+            double denominator = Math.Log(1 + Math.Pow(x, 2));
+            double z = numerator / denominator;
+
+            return Math.Round(z, 3);
         }
     }
 }
